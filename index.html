@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downtown Pizzeria | Order Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Downtown Pizzeria</h1>
+    <p class="intro">Fill out the form below to place an order</p>
+
+    <!--Required structure: Use a <main> container that has two direct children (siblings).
+        The table must NOT be placed inside the <form>. The <form> and <aside> must be
+        siblings inside <main>.    -->
+    <main>
+        <form action="#" method="post">
+            <!--Section 1 - Customer Information-->
+            <fieldset>
+                <legend>Customer Information</legend>
+                <div class="form-grid">
+
+                    <label for="name">Name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        minlength="2"
+                        placeholder="John Doe"
+                    />
+
+                    <label for="address">Address:</label>
+                    <input
+                        type="text"
+                        id="address"
+                        name="address"
+                        required
+                        placeholder="12345 Whyte Ave"
+                    />
+
+                    <label for="phone">Phone:</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        required
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        placeholder="123-456-7890"
+                    />
+
+                </div>
+            </fieldset>
+
+            <!--Section 2 - The Order-->
+            <fieldset>
+                <legend>The Order</legend>
+                <div class="form-grid">
+
+                    <label>Crust</label>
+                    <div class="flex-row">
+                        <label><input type="radio" name="crust" value="thin" required />Thin</label>
+                        <label><input type="radio" name="crust" value="classic" required />Classic</label>
+                        <label><input type="radio" name="crust" value="deep-dish" required />Deep Dish</label>
+                    </div>
+                    
+                    <label>Toppings</label>
+                    <div class="flex-wrap-row">
+                        <label><input type="checkbox" name="toppings" value="pepperoni" />Pepperoni</label>
+                        <label><input type="checkbox" name="toppings" value="mushroom" />Mushroom</label>
+                        <label><input type="checkbox" name="toppings" value="olives" />Olives</label>
+                        <label><input type="checkbox" name="toppings" value="green-peppers" />Green Peppers</label>
+                    </div>
+
+                    <label for="qty">Quantity:</label>
+                    <input
+                        type="number"
+                        id="qty"
+                        name="qty"
+                        required
+                        min="1"
+                        max="10"
+                        value="1"
+                    />
+
+                </div>
+            </fieldset>
+
+            <!--Section 3 - Delivery and Payment-->
+            <fieldset>
+                <legend>Delivery and Payment</legend>
+                <div class="form-grid">
+                    
+                    <label for="instructions">Delivery Instructions:</label>
+                    <textarea
+                        id="instructions"
+                        name="instructions"
+                        rows="3"
+                        placeholder="Optional notes (e.g. gate code, allergies, etc.)"
+                    ></textarea>
+
+                    <label for="delivery-time">Delivery Date/Time:</label>
+                    <input
+                        type="datetime-local"
+                        id="delivery-time"
+                        name="delivery-time"
+                        required
+                        min="2026-10-07T14:00"
+                    />
+
+                    <label for="payment">Payment Method:</label>
+                    <select id="payment" name="payment" required>
+                        <option value="" disabled selected>Select a method</option>
+                        <option value="cash">Cash</option>
+                        <option value="card">Card</option>
+                        <option value="debit">Debit</option>
+                    </select>
+
+                </div>
+            </fieldset>
+
+            <!--Button row-->
+            <div class="button-row">
+                <button type="submit">Place Order</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+
+        <aside>
+            <table>
+                <caption>Order Summary (Example)</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Base Pizza</td>
+                        <td>Large (12"), Thin crust</td>
+                        <td>$16.99</td>
+                    </tr>
+
+                    <tr>
+                        <td>Toppings</td>
+                        <td>Mushroom, Olives, Extra cheese</td>
+                        <td>$4.50</td>
+                    </tr>
+
+                    <tr>
+                        <td>Delivery fee</td>
+                        <td>Standard delivery</td>
+                        <td>$3.99</td>
+                    </tr>
+
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td>Total</td>
+                        <td>(example total)</td>
+                        <td>$25.48</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </aside>
+    </main>
+</body>
+
+</html>

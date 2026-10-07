@@ -1,0 +1,163 @@
+/*  ---------------------
+    style.css
+    -------------------*/
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
+    line-height: 1.5;
+    background: #f4f4f9;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0 4px;
+}
+
+.intro {
+    text-align: center;
+    margin: 0 0 20px;
+    color: #555;
+}
+
+/*  main*/
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    align-items: start;
+}
+
+/*  fieldset*/
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: #fff;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 6px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.form-grid label {
+    text-align: right;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    box-sizing: border-box;
+    padding: 7px 9px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font: inherit;
+}
+
+/* Flex box*/
+.flex-row,
+.button-row {
+    display: flex;
+    gap: 14px;
+}
+
+.flew-wrap-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+    gap: 0px;
+}
+
+.flex-row label
+.flew-wrap-row label {
+    font-weight: normal;
+    text-align: left;
+}
+
+.button-row {
+    margin-top: 10px;
+}
+
+button {
+    padding: 9px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+}
+
+button[type="submit"] {
+    background: #2c3e50;
+    color: #fff;
+}
+
+button[type="reset"] {
+    background: #e5e5e5;
+    color: #222;
+}
+
+/*  Validation feedback*/
+input:valid,
+select:valid {
+  border-color: #2e7d32;
+}
+ 
+input:not([type="datetime-local"]):not:placeholder-shown:invalid {
+  border: 2px solid #c62828;
+}
+ 
+select:invalid:focus,
+input[type="datetime-local"]:invalid:focus {
+  border: 2px solid #c62828;
+}
+
+/*  Order Summary*/
+aside {
+    overflow-x: auto; /* allow the table to scroll instead of breaking layout on narrow screens */
+  }
+   
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+  }
+   
+  caption {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+   
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    text-align: left;
+  }
+   
+  tbody tr:nth-child(even) {
+    background: #f4f4f4;
+  }
+   
+  tbody tr:hover {
+    background: #e8f4f5;
+  }
+   
+  tfoot td {
+    font-weight: bold;
+  }
